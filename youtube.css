@@ -1,0 +1,73 @@
+/*
+distraction free youtube css cuz ffs i can't stand your clickbait and AI overview and ragebait comment section
+*/
+
+/* remove feed */
+#feed, ytd-browse[page-subtype=home] {
+    display: none; 
+}
+#related {
+    display: none
+}
+
+/* Remove right pane */
+.ytd-watch-next-secondary-results-renderer {
+    display: none;
+}
+
+/* Remove left pane */
+#guide {
+    display: none;
+}
+
+/* remove left mini bar (optional tbh because i don't login so i don't see subscribed channels) */
+ytd-mini-guide-renderer {
+    display: none !important;
+}
+ytd-app[guide-persistent-and-visible] ytd-page-manager.ytd-app {
+    margin-left: 0;
+}
+
+/* Remove cards at the end of videos */
+.ytp-ce-element-show {
+    visibility: collapse !important;
+}
+
+/* Remove noti button */
+ytd-notification-topbar-button-renderer {
+    display: none !important;
+}
+
+/* Remove avatars in comment section */
+#author-thumbnail {
+    display: none !important;
+}
+
+/* NO SHORTS */
+.ytGridShelfViewModelHost .ytd-item-section-renderer {
+    display: none !important;
+}
+
+/* no metadata in search */
+.metadata-snippet-container-one-line, .metadata-snippet-container {
+    display: none !important;
+}
+
+/* no AI metadata */
+#expandable-metadata {
+    display: none !important;
+}
+
+/* remove the recommendation panel on the side of the video */
+#secondary {
+    display: none !important;
+}
+
+/* FUCK YOU AI OVERVIEW BUTTONS */
+#flexible-item-buttons {
+    display: none !important;
+}
+/* some random buttons i hate */
+#guide-button {
+    display: none !important;
+}
