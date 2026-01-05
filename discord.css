@@ -1,35 +1,82 @@
-/* most of this is copied from https://github.com/papamilky */
+/*
+basically all of this is from here except the recolor (which is from https://github.com/papamilky):
+https://codeberg.org/ridge/Discord-CSS-Tweaks/src/branch/main/discord-css-tweaks.css
+*/
 
-/* Top Bar Removal and Message Input Align */
-.visual-refresh {
-    div[class^="base_"] {
-        & > div[class^="bar_"] {
-            display: none;
-        }
-    }
+/* Username gradients in boosted guilds */
+span[class*="-usernameGradient"] {
+  -webkit-text-fill-color: unset;
+  background: none;
+  color: var(--custom-gradient-color-1);
+}
 
-    ul[data-list-id="guildsnav"] > div[class^="itemsContainer_"] {
-        margin-top: 6px;
-    }
-    
+span[class*="-nameGlow"] {
+  display: none;
+}
+
+/* Quests icon */
+svg[class^=questsIcon_] {
+  display: none;
+}
+
+/* Avatar decorations */
+svg[class*=-avatarDecoration] ,
+img[class*=-avatarDecoration] {
+  display: none;
+}
+
+/* Profile decorations */
+div[class*=profileEffects] {
+  display: none;
+}
+
+/* Community badge... thing */
+span[class*="-chipletContainerInner"]:has(img[class*="-badge"]) ,
+div[class*="-tags"] > span[class*="-guildTagContainer"] {
+  display: none;
+}
+
+/* Custom status reaction buttons */
+div[class~="user-profile-modal-v2"] div[class*="-statusPopover"] ,
+div[class~="user-profile-popout"] div[class*="-statusPopover"] {
+  display: none;
+}
+
+/* top bar removal */
+div[class*="-layer"] > div[class*="-container"] > div[class*="-base"] > div[class*="-bar"]:has(div[class*="-title"]) {
+  display: none;
+}
+
+nav[class*=-wrapper]:has(div[class*="-unreadMentionsIndicatorTop"]) {
+  margin-top: 0.9em;
 }
 
 :root {
-    --custom-app-top-bar-height: 0 !important;
+  --custom-app-top-bar-height: 0.1px;
+}
+
+/* Download Apps button in web app */
+div[class*=-listItem]:has(div[data-list-item-id=guildsnav___app-download-button]) {
+  display: none;
+}
+
+/* Remove game collection buttons */
+div[class$="-widgetPreviews"],div[class*="-scrollerBase"] > section > ul > li > div:has(img[src*="/app-icons/"]) {
+  display: none;
+}
+
+/* Chat box sticker button */
+div[class^=expression-picker-chat-input-button]:has(div[class*=-stickerButton]) {
+  display: none;
+}
+
+/* App catalogue buttons */
+div[id="guild-header-popout-application-directory"] , /* Guild menu app catalogue */
+div[class~="app-launcher-entrypoint"] {               /* In-chat app catalogue    */
+  display: none;
 }
 
 
-div[class^="container_"] {
-  --custom-chat-input-margin-bottom: 6px;
-}
-
-div[class^="typing_"] {
-    margin-bottom: -50px
-}
-
-:root {
-  --custom-channel-textarea-text-area-height: 52px;
-}
 
 /* Recolor */
 
