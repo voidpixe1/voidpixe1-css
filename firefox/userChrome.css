@@ -1,0 +1,134 @@
+@import url("./chrome/extensions.css");
+
+* {
+    border-radius: 0px !important;
+    box-shadow: none !important;
+}
+
+notification-message.animated {
+    background: #343F44;
+}
+
+.searchmode-switcher {
+    display: none !important;    
+}
+
+.urlbar-input {
+    text-align: center !important;
+}
+
+.infobar {
+    --message-bar-icon-color: #D3C6AA !important;
+    --message-bar-icon-size: var(--size-item-small) !important;
+    --message-bar-background-color: var(--background-color-information) !important;
+    background-color: #3E494E !important;
+    border: none !important;
+    border-radius: 0px !important;
+    color: #D3C6AA !important;
+    text-align: start !important;
+    --info-bar-background-color: #3e494e !important;
+    --info-bar-text-color: #d3c6aa !important;
+    --message-bar-border-color: transparent !important;
+    position: relative !important;
+}
+
+#sidebar-box {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+}
+
+#sidebar {
+    background-color: #343F44 !important;
+}
+
+#sidebar-tools-and-extensions-splitter {
+    display: none !important;
+}
+
+#input {
+    background-color: #3A464C !important;
+    border: 1px solid #83C092 !important;
+}
+
+.menupopup-arrowscrollbox:not([part="arrowscrollbox"]),
+.menupopup-arrowscrollbox[exportparts="scrollbox: arrowscrollbox-scrollbox"] {
+    appearance: none !important;
+    background-color: #3a464c !important;
+    box-shadow:none !important;
+    color: #D3C6AA !important;
+    border: 1px solid #83c092 !important;
+    overflow: hidden !important;
+}
+
+#autohide-context :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#back-button > menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#backForwardMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#blockedPopupOptions :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#contentAreaContextMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#ContentSelectDropdown :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#customizationPaletteItemContextMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#customizationPanelItemContextMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#customization-toolbar-menu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#downloadsContextMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#editBMPanel_folderMenuList menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#forward-button > menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#identity-popup-popup-menulist menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#main-menubar menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#mainPopupSet > menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#mainPopupSet > menupopup > menu > menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+.new-tab-popup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#new-tab-button-popup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#OtherBookmarksPopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#contentAreaContextMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#pageActionContextMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#picontext :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#PlacesChevronPopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#placesColumnsContext :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#placesContext :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#placesMenu menu > menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#PlacesToolbarItems .bookmark-item menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+.search-one-offs-context-menu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#SyncedTabsSidebarContext :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#tabContextMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#tabs-newtab-button-popup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+.textbox-contextmenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#toolbar-context-menu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#toolbox-menu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+.urlbar-input-box .textbox-contextmenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#viewButton > menupopup :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"]),
+#widget-overflow #customizationPanelItemContextMenu :-moz-any(menu, menuitem):-moz-any(:hover, [_moz-menuactive="true"]):not([disabled="true"])
+{
+	background-color: #475258 !important;
+	color: #D3C6AA !important;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+tooltip {
+    background-color: #3D484D !important;
+    color: #d3c6aa !important;
+    border: 1px solid #475258 !important;
+    animation-name: fade !important;
+    animation-duration: 0.9s !important;
+}
+
+.sidebar-panel {
+    & > * + * {
+        color: #D3C6AA !important;
+    }
+}
+.sidebar-panel-header {
+    color: #d3c6aa !important;
+}
+
+.titlebar-buttonbox-container {
+    display: none;
+}
+
+#vertical-spacer {
+    display: none;
+}
+

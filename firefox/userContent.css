@@ -1,0 +1,72 @@
+@-moz-document url-prefix("about"), url-prefix("about:newtab") {
+    * {
+        box-shadow: none;
+    }
+
+    body {
+        background: #333c43 !important ;
+        background-size: cover !important ; 
+    }
+
+    :root {
+        --background-color-canvas: #333c43 !important;
+    }
+
+    input {
+        border: 1px solid #83C092 !important;
+        background-color: #2D353B !important;
+    }
+
+
+    .outer-wrapper.only-search {
+        display: none !important;
+    }
+
+    .outer-wrapper.only-search, .personalizeButtonWrapper, .logo-and-wordmark-wrapper {
+        display: none !important;
+    }
+    .search-wrapper .search-handoff-button, .search-wrapper input {
+        box-shadow: none;
+        background: #3A464C !important;
+        margin: 0px;
+        padding: 0px;
+    }
+    .card-container {
+        background: #3E494E !important;
+    }
+    .fake-textbox {
+        align-content: center;
+        margin: auto;
+        width: 50%;
+    }
+
+    richlistitem[selected] {
+        color: #D3C6AA !important;
+        background: #3F494D !important;
+    }
+
+    #downloadsListBox > richlistitem {
+        background: #2D353B !important;
+        color: #D3C6AA !important;
+    }
+}
+
+@-moz-document url("about:privatebrowsing") {
+    body {
+        display: none !important;
+    }
+}
+
+@-moz-document url("about:addons") {
+    .card.addon {
+        background: #2D353B !important; /* or any color/image */
+    }
+
+}
+
+@-moz-document url("about:config"){
+    tr.odd:not(:hover) {
+        background-color: #3A464C !important;
+    }
+
+}
