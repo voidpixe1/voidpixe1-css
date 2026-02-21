@@ -1,13 +1,23 @@
-/*
-distraction free youtube css cuz ffs i can't stand your clickbait and AI overview and ragebait comment section
-*/
-
 /* REMOVE FEED */
-#feed, ytd-browse[page-subtype=home] {
-    display: none; 
+ytd-browse[page-subtype=home] > ytd-two-column-browse-results-renderer[page-subtype=home] > #primary > ytd-rich-grid-renderer {
+    display: none !important;
 }
+#frosted-glass.with-chipbar.ytd-app {
+    background-color: var(--bg1);
+}
+ytd-app {
+    background-color: var(--bg1);
+}
+ytd-browse {
+    background-color: var(--bg1);
+}
+
 #related {
     display: none
+}
+
+.ytGridShelfViewModelGridShelfBottomButtonContainer {
+    display: none !important;
 }
 
 /* Force always theater mode */
@@ -36,6 +46,9 @@ ytd-app[guide-persistent-and-visible] ytd-page-manager.ytd-app {
 .ytp-fullscreen-grid-main-content {
     display: none !important;
 }
+.ytp-endscreen-content {
+    display: none !important;
+}
 
 /* Remove noti button */
 ytd-notification-topbar-button-renderer {
@@ -46,6 +59,9 @@ ytd-notification-topbar-button-renderer {
 #author-thumbnail {
     display: none !important;
 }
+
+/* remove the entire comment section cuz sometimes the ragebait is too much*/
+/*.ytd-comments { display: none !important; } */
 
 /* NO SHORTS */
 ytd-guide-entry-renderer:has([title="Shorts"]) {

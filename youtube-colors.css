@@ -1,0 +1,634 @@
+/* ==UserStyle==
+@name           youtube zen: everforest
+@namespace      https://www.github.com/cobyzaby/zen-everforest
+@version        1.0
+@description    simple everforest, youtube
+@author         inchwyrm
+@preprocessor	default
+
+@var color 	foreground 	"Foreground"	#D3C6AA
+@var color 	red			"Red"			#E67E80
+@var color 	orange		"Orange"		#E69875
+@var color 	yellow		"Yellow"		#DBBC7F
+@var color 	green 		"Green" 		#A7C080
+@var color 	blue 		"Blue" 			#7FBBB3
+@var color 	aqua 		"Aqua" 			#83C092
+@var color 	purple 		"Purple" 		#D699B6
+
+@var color 	bg0 		"Background 0" 	#272E33
+@var color 	bg1 		"Background 1" 	#2E383C
+@var color 	bg2 		"Background 2" 	#374145
+@var color 	bg3 		"Background 3" 	#414B50
+@var color 	bg4 		"Background 4" 	#495156
+@var color 	bg5 		"Background 5" 	#4F5B58
+
+@var color 	gray0		"Gray 0"		#7A8478
+@var color 	gray1		"Gray 1"		#859289
+@var color 	gray2		"Gray 2"		#9DA9A0
+
+@var color	bg-green	"Background green" #3C4841
+==/UserStyle== */
+@-moz-document domain("youtube.com") {
+	* {
+		scrollbar-color: var(--bg5) transparent!important;
+		scrollbar-width: thin!important;
+	}
+	body,
+	#content,
+	#content-container,
+	#chips-content {
+		background-color: var(--bg0);
+		color: var(--gray2);
+	}
+	/* remove ambient */
+	#cinematics canvas {
+		opacity: 0 !important;
+	}
+	#progress.yt-page-navigation-progress {
+		background-color: var(--green);
+	}
+	#masthead > div:nth-child(5) {
+		background: var(--bg2);
+		border-bottom: 1px solid var(--green);
+	}
+	.ytSearchboxComponentInputBoxDark {
+		background-color: var(--bg4);
+		border-color: var(--bg4);
+		color: var(--gray2);
+	}
+	.ytSearchboxComponentInputBoxDark.ytSearchboxComponentInputBoxHasFocus {
+		border-color: var(--green);
+		background-color: var(--bg5);
+		color: var(--green);
+	}
+        .ytSearchboxComponentSuggestionsContainer {
+		border-color: var(--green);
+		background-color: var(--bg1);
+		color: var(--foreground);
+    }
+	.ytSearchboxComponentSearchButtonDark {
+		background-color: var(--bg4);
+		border: 0;
+	}
+	#progress.yt-page-navigation-progress {
+		background: linear-gradient(to right, var(--green) 80%, var(--bg-green) 100%);
+	}
+	ytd-menu-renderer.ytd-watch-metadata > div:nth-child(1) > yt-button-view-model:nth-child(2),
+	ytd-menu-renderer.ytd-watch-metadata > div:nth-child(2) > yt-button-view-model:nth-child(2),
+	ytd-menu-renderer.ytd-watch-metadata > div:nth-child(2) > yt-button-view-model:nth-child(3) {
+		display: none;
+	}
+	/* default button */
+	button:not(.ytp-large-play-button),
+	a[role="button"] {
+		> :has(path:nth-child(2)) {
+			path:nth-child(1) {
+				fill-opacity: 1 !important;
+			}
+		}
+		path,
+		.ytp-svg-fill {
+			fill: var(--foreground);
+		}
+		&:hover {
+			path,
+			.ytp-svg-fill {
+				fill: var(--green);
+			}
+			backdrop-filter: none !important;
+		}
+	}
+	.ytd-masthead button:hover {
+		backdrop-filter: none !important;
+		border: none;
+		background-color: var(--bg5);
+	}
+	.ytd-guide-renderer {
+		background-color: var(--bg1);
+		tp-yt-paper-item {
+			.guide-icon.ytd-guide-entry-renderer,
+			#content-icon.ytd-compact-link-renderer {
+				display: none !important;
+			}
+		}
+	}
+        /* popups */
+    .style-scope .ytd-popup-container {
+        background-color: var(--bg1);
+    }
+
+	h1 span {
+		color: var(--gray0) !important;
+	}
+	.yt-tab-shape-wiz__tab--tab-selected,
+	.yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
+		color: var(--green) !important;
+	}
+
+	.yt-page-header-view-model__page-header-headline,
+	#page-header-container {
+		background-color: var(--bg0) !important;
+	}
+
+	#endpoint {
+		background-color: var(--bg1) !important;
+	}
+	ytd-mini-guide-renderer {
+		background-color: var(--bg1)!important;
+		border-top: 1px var(--green) solid;
+	}
+	#newness-dot.ytd-guide-entry-renderer,
+	.yt-tab-group-shape-wiz__slider {
+		background: var(--orange) !important;
+	}
+	/* volume slider */
+	.ytp-volume-slider-handle {
+		color: var(--green) !important;
+		background: var(--green);
+		&:before {
+			background: var(--green);
+		}
+		&:after {
+			background: var(--bg5);
+			width: calc(64px - 6px);
+			margin-left: 6px;
+		}
+	}
+	yt-chip-cloud-chip-renderer[chip-style="STYLE_DEFAULT"][selected],
+	yt-chip-cloud-chip-renderer[chip-style="STYLE_HOME_FILTER"][selected] {
+		background-color: var(--green);
+		color: var(--bg0);
+	}
+	.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--outline {
+		border: 1px solid var(--bg2) !important;
+	}
+	.ytp-progress-bar {
+		/* watch */
+		.ytp-swatch-background-color {
+			background: var(--green);
+		}
+		.ytp-load-progress {
+			background: var(--gray1);
+		}
+		.ytp-progress-linear-live-buffer {
+			background: var(--green);
+		}
+	}
+	.YtProgressBarLineProgressBarPlayed {
+		background: var(--green);
+	}
+	/* live */
+	html[dark],
+	[dark] {
+		--yt-spec-static-overlay-background-brand: var(--orange) !important;
+		--yt-spec-static-overlay-icon-active-other: var(--bg0);
+	}
+	.YtProgressBarPlayheadProgressBarPlayheadDot,
+	.badge-shape-wiz--live.badge-shape-wiz--overlay {
+		color: var(--bg0);
+		background-color: var(--orange);
+	}
+	.badge-style-type-live-now-alternate.ytd-badge-supported-renderer {
+		color: var(--bg0);
+	}
+	html[refresh],
+	[refresh] {
+		--yt-spec-static-brand-red: var(--orange);
+	}
+
+	.ytp-tooltip.ytp-tooltip-opaque.ytp-bottom,
+	.collections-stack-wiz__collection-stack1,
+	.collections-stack-wiz__collection-stack2,
+	#icon.ytd-rich-shelf-renderer {
+		display: none;
+	}
+	.ytp-time-current,
+	.ytp-time-separator,
+	.ytp-time-duration {
+		color: var(--gray2);
+	}
+	/*
+    extra buttons like sponsor block
+    https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/
+    */
+	.ytp-right-controls {
+		button {
+			img {
+				filter: brightness(.6);
+			}
+		}
+		.ytp-autonav-toggle-button {
+			&[aria-checked="false"] {
+				filter: brightness(80%);
+			}
+			&[aria-checked="true"] {
+				filter: brightness(60%);
+				&:after {
+					filter: brightness(100%);
+				}
+			}
+		}
+	}
+	/* labels */
+	h1 {
+		color: var(--foreground);
+		font-weight: normal !important;
+	}
+	.ytd-channel-name a {
+		color: var(--green) !important;
+		font-weight: normal !important;
+	}
+	.owner-sub-count {
+		color: var(--gray1) !important;
+	}
+	/* subscribe */
+	yt-button-shape {
+		span {
+			color: var(--gray2);
+		}
+		&:hover {
+			span {
+				color: var(--green);
+			}
+		}
+	}
+	.YtLikeButtonViewModelHost {
+		path {
+			stroke: var(--gray2) !important;
+		}
+		&:hover path {
+			stroke: var(--blue) !important;
+		}
+		.yt-spec-touch-feedback-shape__fill {
+			background: var(--blue) !important;
+		}
+	}
+	*:has(#buttons.ytd-masthead a[aria-label="Sign in"]) {
+		.YtLikeButtonViewModelHost {
+			path {
+				stroke: var(--bg0) !important;
+			}
+			&:hover path {
+				stroke: var(--bg0) !important;
+			}
+			.yt-spec-touch-feedback-shape__fill {
+				background: var(--bg0) !important;
+			}
+		}
+	}
+	.style-scope.ytd-rich-grid-row.ytd-rich-item-renderer-highlight,
+	#content.ytd-rich-item-renderer:hover,
+	#content.ytd-rich-item-renderer:focus {
+		background: var(--bg1) !important;
+		box-shadow: var(--bg1) 0px 0px 0px 10px !important;
+	}
+	.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
+		color: var(--foreground);
+		background-color: rgba(255, 255, 255, 0.1);
+		&:hover {
+			color: var(--purple);
+			background-color: var(--bg5);
+		}
+	}
+	div[id="play-button"] {
+		path {
+			color: var(--foreground);
+		}
+		&:hover {
+			path {
+				color: var(--green);
+			}
+		}
+	}
+	.truncated-text-wiz button span {
+		color: var(--green);
+	}
+	div.tp-yt-app-header-layout:nth-child(2) {
+		padding-top: 0px;
+	}
+	#tabs-divider {
+		border-bottom-width: 0px;
+	}
+	.page-header-view-model-wiz__page-header-title h1 span {
+		font-weight: 400 !important;
+		color: var(--green) !important;
+	}
+	/*
+    like/dislike count
+    https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/
+    */
+	button {
+		div[class*="button-text-content"] {
+			color: var(--gray2);
+		}
+		&:hover div[class*="button-text-content"] {
+			color: var(--green);
+		}
+	}
+	.yt-spec-button-view-model:hover yt-animated-rolling-number {
+		color: var(--green);
+	}
+	/* like/dislike gage */
+	.ryd-tooltip {
+		display: none !important;
+	}
+
+	/* heart */
+	#creator-heart {
+		max-width: 25px;
+	}
+
+	#hearted-border {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+
+		&.ytd-creator-heart-renderer {
+			width: 20px;
+			height: 18px;
+		}
+
+		path {
+			fill: var(--orange);
+		}
+	}
+	#hearted {
+		display: none;
+	}
+
+	/* video info */
+	.ytVideoMetadataCarouselViewModelHost,
+	#description.ytd-watch-metadata {
+        background: var(--bg1);
+		span,
+		ytd-text-inline-expander,
+		#header div,
+		h3,
+		h2,
+		path {
+			color: var(--gray2) !important;
+			fill: var(--green);
+			font-weight: normal;
+		}
+	}
+	#social-links {
+		img {
+			filter: grayscale(.7) invert(.25) brightness(.8);
+		}
+		div {
+			color: var(--bg3) !important;
+		}
+		.yt-spec-button-shape-next--outline:hover {
+			border: 1px solid var(--bg4);
+			background: var(--bg4);
+			img {
+				filter: unset;
+			}
+			path,
+			div,
+			span {
+				fill: var(--green);
+				color: var(--green) !important;
+			}
+		}
+	}
+	/* views */
+	yt-animated-rolling-number {
+		color: var(--gray2);
+	}
+	/* ..more */
+	.button.ytd-text-inline-expander {
+		color: var(--gray2) !important;
+		&:hover {
+			color: var(--green) !important;
+		}
+	}
+	/* title link */
+	.ytp-title-link {
+		width: fit-content;
+		color: var(--blue) !important;
+		padding: 10px;
+		margin-top: -10px;
+		&:hover {
+			color: var(--foreground) !important;
+			backdrop-filter: grayscale(60%) brightness(40%);
+		}
+	}
+	/* share buttons etc */
+	.ytp-overflow-panel-action-buttons,
+	.ytp-chrome-top-buttons {
+		.ytp-button:hover {
+			backdrop-filter: blur(8px) brightness(30%);
+			.ytp-svg-fill {
+				fill: var(--bg0) !important;
+				stroke: var(--green) !important;
+				stroke-width: 1px;
+			}
+		}
+	}
+	/* play button */
+	.ytp-large-play-button {
+		svg:nth-child(1) {
+			.ytp-large-play-button-bg {
+				fill: var(--bg1) !important;
+				fill-opacity: .8 !important;
+			}
+			> path:nth-child(2) {
+				fill: var(--gray0);
+			}
+		}
+		&:hover svg:nth-child(1) {
+			.ytp-large-play-button-bg {
+				fill: var(--orange) !important;
+				fill-opacity: .8 !important;
+			}
+			> path:nth-child(2) {
+				fill: var(--foreground);
+				fill-opacity: .8;
+			}
+		}
+	}
+	/* side bar */
+	#author-name.owner.yt-live-chat-author-chip {
+		background: var(--bg0) !important;
+		color: var(--aqua) !important;
+		padding: 0 !important;
+	}
+	yt-live-chat-viewer-engagement-message-renderer,
+	yt-live-chat-text-message-renderer {
+		padding: 4px;
+		margin-bottom: 24px;
+	}
+	#card {
+		padding-left: 0px;
+	}
+
+	#chat {
+		border-bottom-width: 0px;
+	}
+	#author-name.yt-live-chat-author-chip {
+		color: var(--orange);
+		font-weight: normal;
+	}
+	#message.yt-live-chat-text-message-renderer {
+		color: var(--gray2);
+		font-weight: normal;
+	}
+	.yt-simple-endpoint {
+		color: var(--gray2);
+		&:hover {
+			color: var(--green);
+		}
+	}
+	yt-live-chat-banner-manager.yt-live-chat-item-list-renderer {
+		background: var(--bg1) !important;
+	}
+	yt-icon-button.yt-live-chat-item-list-renderer,
+	yt-live-chat-viewer-engagement-message-renderer {
+		background: var(--bg1) !important;
+		color: var(--gray2);
+	}
+	#icon.yt-live-chat-viewer-engagement-message-renderer,
+	#author-photo.yt-live-chat-text-message-renderer {
+		display: none;
+	}
+	#card.yt-live-chat-viewer-engagement-message-renderer {
+		background: var(--bg0) !important;
+	}
+	.yt-live-chat-renderer {
+		#items {
+			background: var(--bg1) !important;
+		}
+		#author-photo {
+			display: none;
+		}
+		#message {
+			color: var(--gray2)!important;
+		}
+	}
+	yt-live-chat-banner-renderer,
+	iron-selector.yt-chip-cloud-renderer > * {
+		background: var(--bg1)!important;
+		color: var(--gray2)!important;
+		&:hover {
+			background: var(--bg2) !important;
+			color: var(--foreground)!important;
+		}
+	}
+	/* comment section */
+	.ytd-comments {
+		:not(#author-text) > span,
+		path,
+		#icon-label.yt-dropdown-menu,
+		#content-text.ytd-comment-renderer,
+		.ytd-comment-renderer a {
+			color: var(--gray2);
+			font-weight: normal;
+		}
+	}
+    ytd-comments-header-renderer {
+		background-color: var(--bg0);
+	}
+	.cometCommentBody a,
+	.yt-core-attributed-string__link--call-to-action-color {
+		color: var(--green) !important;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.yt-spec-button-shape-next.yt-spec-button-shape-next--text.yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--align-by-text:hover {
+		background: var(--bg2);
+
+		path,
+		span {
+			color: var(--green) !important;
+		}
+	}
+	yt-formatted-string > .emoji,
+	yt-formatted-string > .small-emoji {
+		filter: contrast(.5) brightness(.9);
+	}
+	/* verified */
+	.style-scope.ytd-channel-name svg {
+		fill: var(--green);
+	}
+	/* subsribed */
+	#subscribe-button-shape > button {
+		background: var(--bg3);
+		&:hover {
+			background: var(--bg4);
+		}
+	}
+	ytd-author-comment-badge-renderer.style-scope {
+		padding-left: 0px !important;
+	}
+	#icon.ytd-author-comment-badge-renderer path {
+		stroke: var(--gray2) !important;
+		fill: var(--bg1);
+		stroke-width: 2px;
+	}
+	#author-text {
+		color: var(--orange) !important;
+		font-weight: normal !important;
+	}
+
+	#content > #page-manager.ytd-app {
+		overflow-x: hidden;
+	}
+	html[dark],
+	[dark] {
+		--yt-spec-call-to-action: var(--green) !important;
+		--yt-spec-text-primary: var(--gray2) !important;
+		--yt-spec-suggested-action: var(--bg0) !important;
+	}
+
+	.ytd-merch-shelf-renderer {
+		background-color: var(--bg0)!important;
+	}
+
+	a:hover {
+		color: var(--green)!important;
+	}
+
+	.ytChipShapeChip {
+		background-color: var(--bg3);
+		color: var(--foreground);
+	}
+
+	.ytChipShapeChip:hover {
+		background-color: var(--bg5);
+		color: var(--green);
+	}
+
+	.ytChipShapeActive {
+		background-color: var(--green);
+		color: var(--bg0);
+	}
+
+	#right-arrow,
+	#left-arrow {
+		box-shadow: none;
+		color: var(--foreground);
+		fill: var(--foreground);
+	}
+
+	.cta-item-hide:hover {
+		color: var(--green);
+		fill: var(--green);
+	}
+	.yt-lockup-metadata-view-model__title {
+		color: var(--foreground);
+		cursor: pointer;
+	}
+	.yt-lockup-metadata-view-model__title:hover {
+		color: var(--green);
+	}
+
+	.content button {
+		background-color: var(--bg3);
+	}
+	.content button:hover {
+		background-color: var(--bg5);
+	}
+}
