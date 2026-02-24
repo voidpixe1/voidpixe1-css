@@ -37,9 +37,14 @@
 	#content,
 	#content-container,
 	#chips-content {
-		background-color: var(--bg0);
-		color: var(--gray2);
+		color: var(--foreground);
 	}
+    ytd-app[mini-guide-visible] ytd-page-manager.ytd-app {
+        margin-left: 0px;
+    }
+    tp-yt-app-header-layout > #wrapper > div:nth-child(1) {
+        border: 2px;
+    }
 	/* remove ambient */
 	#cinematics canvas {
 		opacity: 0 !important;
@@ -47,10 +52,33 @@
 	#progress.yt-page-navigation-progress {
 		background-color: var(--green);
 	}
+    .header.ytd-playlist-panel-renderer {
+        background-color: var(--bg2);
+    }
+    .playlist-items.ytd-playlist-panel-renderer {
+        background-color: var(--bg0);
+    }
+    
+    /* THIS IS A WAY TO GENERATE GREYSCALE THUMBNAILS */
+    
+	/* .yt-simple-endpoint.ytd-playlist-thumbnail, */
+	/* ytd-thumbnail #thumbnail.ytd-thumbnail { */
+	/* 	filter: brightness(.8) grayscale(.8); */
+	/* 	background-color: var(--bg0); */
+	/* } */
+	/* .ytd-topbar-logo-renderer { */
+	/* 	display: none; */
+	/* } */
 	#masthead > div:nth-child(5) {
 		background: var(--bg2);
 		border-bottom: 1px solid var(--green);
 	}
+    #tabs-inner-container.ytd-tabbed-page-header {
+        background: var(--bg0)
+    }
+    #page-header.ytd-tabbed-page-header {
+        background: var(--bg0);
+    }
 	.ytSearchboxComponentInputBoxDark {
 		background-color: var(--bg4);
 		border-color: var(--bg4);
@@ -118,7 +146,7 @@
     }
 
 	h1 span {
-		color: var(--gray0) !important;
+		color: var(--gray2) !important;
 	}
 	.yt-tab-shape-wiz__tab--tab-selected,
 	.yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
@@ -165,17 +193,17 @@
 	.ytp-progress-bar {
 		/* watch */
 		.ytp-swatch-background-color {
-			background: var(--green);
+			background: var(--red);
 		}
 		.ytp-load-progress {
 			background: var(--gray1);
 		}
 		.ytp-progress-linear-live-buffer {
-			background: var(--green);
+			background: var(--red);
 		}
 	}
 	.YtProgressBarLineProgressBarPlayed {
-		background: var(--green);
+		background: var(--red);
 	}
 	/* live */
 	html[dark],
@@ -232,11 +260,9 @@
 	/* labels */
 	h1 {
 		color: var(--foreground);
-		font-weight: normal !important;
 	}
 	.ytd-channel-name a {
 		color: var(--green) !important;
-		font-weight: normal !important;
 	}
 	.owner-sub-count {
 		color: var(--gray1) !important;
@@ -303,6 +329,10 @@
 	.truncated-text-wiz button span {
 		color: var(--green);
 	}
+	/* #page-header-banner-sizer.ytd-tabbed-page-header, */
+	/* .yt-decorated-avatar-view-model-wiz { */
+	/* 	display: none; */
+	/* } */
 	div.tp-yt-app-header-layout:nth-child(2) {
 		padding-top: 0px;
 	}
@@ -310,7 +340,6 @@
 		border-bottom-width: 0px;
 	}
 	.page-header-view-model-wiz__page-header-title h1 span {
-		font-weight: 400 !important;
 		color: var(--green) !important;
 	}
 	/*
@@ -360,16 +389,14 @@
 	/* video info */
 	.ytVideoMetadataCarouselViewModelHost,
 	#description.ytd-watch-metadata {
-        background: var(--bg1);
-		span,
+        background: var(--bg2);
+        span,
 		ytd-text-inline-expander,
 		#header div,
 		h3,
 		h2,
 		path {
 			color: var(--gray2) !important;
-			fill: var(--green);
-			font-weight: normal;
 		}
 	}
 	#social-links {
@@ -455,11 +482,6 @@
 		color: var(--aqua) !important;
 		padding: 0 !important;
 	}
-	yt-live-chat-viewer-engagement-message-renderer,
-	yt-live-chat-text-message-renderer {
-		padding: 4px;
-		margin-bottom: 24px;
-	}
 	#card {
 		padding-left: 0px;
 	}
@@ -469,11 +491,9 @@
 	}
 	#author-name.yt-live-chat-author-chip {
 		color: var(--orange);
-		font-weight: normal;
 	}
 	#message.yt-live-chat-text-message-renderer {
 		color: var(--gray2);
-		font-weight: normal;
 	}
 	.yt-simple-endpoint {
 		color: var(--gray2);
@@ -481,24 +501,17 @@
 			color: var(--green);
 		}
 	}
-	yt-live-chat-banner-manager.yt-live-chat-item-list-renderer {
-		background: var(--bg1) !important;
-	}
-	yt-icon-button.yt-live-chat-item-list-renderer,
-	yt-live-chat-viewer-engagement-message-renderer {
-		background: var(--bg1) !important;
-		color: var(--gray2);
-	}
 	#icon.yt-live-chat-viewer-engagement-message-renderer,
 	#author-photo.yt-live-chat-text-message-renderer {
 		display: none;
 	}
 	#card.yt-live-chat-viewer-engagement-message-renderer {
-		background: var(--bg0) !important;
+		background: var(--bg1);
 	}
 	.yt-live-chat-renderer {
+        background: var(--bg1);
 		#items {
-			background: var(--bg1) !important;
+			background: var(--bg1);
 		}
 		#author-photo {
 			display: none;
@@ -509,7 +522,7 @@
 	}
 	yt-live-chat-banner-renderer,
 	iron-selector.yt-chip-cloud-renderer > * {
-		background: var(--bg1)!important;
+		background: var(--bg0)!important;
 		color: var(--gray2)!important;
 		&:hover {
 			background: var(--bg2) !important;
@@ -524,11 +537,10 @@
 		#content-text.ytd-comment-renderer,
 		.ytd-comment-renderer a {
 			color: var(--gray2);
-			font-weight: normal;
 		}
 	}
     ytd-comments-header-renderer {
-		background-color: var(--bg0);
+		background-color: var(--bg1);
 	}
 	.cometCommentBody a,
 	.yt-core-attributed-string__link--call-to-action-color {
@@ -570,7 +582,6 @@
 	}
 	#author-text {
 		color: var(--orange) !important;
-		font-weight: normal !important;
 	}
 
 	#content > #page-manager.ytd-app {
